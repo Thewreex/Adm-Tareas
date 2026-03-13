@@ -1,35 +1,48 @@
 <template>
     <div class="contenedor-ingreso">
         <h1>Ingresar una tarea</h1>
-        <form class="formulario-ingreso">
+        <form @click.prevent class="formulario-ingreso">
             <div class="inputs-ingreso">
-                <input type="text" placeholder="Nombre de la tarea">
-                <input type="text" placeholder="Descripcion">
+                <input v-model="tarea" type="text" placeholder="Nombre de la tarea">
+                <p>{{ tarea }}</p>
+                <input v-model="descripcion" type="text" placeholder="Descripcion">
+                <p>{{ descripcion }}</p>
             </div>
 
             <div class="radio-ingreso">
                 <label>
-                    <input type="radio" name="prioridad" value="baja">
+                    <input v-model="prioridad" type="radio" name="prioridad" value="baja">
                     Baja
                 </label>
 
                 <label>
-                    <input type="radio" name="prioridad" value="media">
+                    <input v-model="prioridad" type="radio" name="prioridad" value="media">
                     Media
                 </label>
 
                 <label>
-                    <input type="radio" name="prioridad" value="alta">
+                    <input v-model="prioridad" type="radio" name="prioridad" value="alta">
                     Alta
                 </label>
             </div>
+            <p>{{ prioridad }}</p>
 
-            <button>Ingresar</button>
+            <button @click="ingresar">Ingresar</button>
         </form>
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const tarea = ref("")
+const descripcion = ref("")
+const prioridad = ref("")
+
+const ingresar = () => {
+    alert("Ingreso")
+}
+</script>
 
 <style scoped>
 .contenedor-ingreso {

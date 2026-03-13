@@ -2,13 +2,13 @@
     <div class="contenedor-tarea">
         <h5>Nombre Tarea</h5>
         <div>
-            <button id="pencil" class="botones-tareas">
+            <button @click="editar" id="pencil" class="botones-tareas">
                 <i class="fa-solid fa-pencil"></i>
             </button>
-            <button id="check" class="botones-tareas">
+            <button @click="marcar" id="check" class="botones-tareas">
                 <i class="fa-solid fa-check"></i>
             </button>
-            <button id="x" class="botones-tareas">
+            <button @click="eliminar" id="x" class="botones-tareas">
                 <i class="fa-solid fa-x"></i>
             </button>
         </div>
@@ -16,7 +16,22 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const editar = () => {
+    alert("Editar")
+}
+
+const marcar = () => {
+    alert("Marcar")
+}
+
+const eliminar = () => {
+    alert("Eliminar")
+}
+
+</script>
 
 <style scoped>
 .contenedor-tarea {

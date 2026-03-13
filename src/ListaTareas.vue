@@ -8,6 +8,7 @@
 
 <script setup>
 import Tareas from './Tareas.vue';
+import { ref } from 'vue';
 
 </script>
 
